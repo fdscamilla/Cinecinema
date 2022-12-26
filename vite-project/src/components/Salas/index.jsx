@@ -1,0 +1,24 @@
+import Scrumbs from "../../molecules/scrumbs";
+import Estilosalas from "./style";
+
+function Salas(props){
+  return(
+    <Estilosalas>
+      <div className="salaCinema">
+        <div className="sala">
+          <h3>Sala 1</h3>
+        </div>
+        <div className="scrumbs">
+          <Scrumbs classe={props.classe} tipo='2d'/>
+          <Scrumbs classe={props.classe} tipo='4d'/>
+        </div>
+        <div className="hora">
+          <h4>13:40</h4>
+        </div>
+      </div>
+    </Estilosalas>
+    
+  )
+}
+
+export default Salas;
