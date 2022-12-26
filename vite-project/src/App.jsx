@@ -1,8 +1,9 @@
 import './App.css'
-import Menu from './molecules/Menu'
-import Footer from './molecules/Footer'
-import Sessoes from './organism/Sessoes';
-import Cardsblog from './molecules/cardsBlog';
+import Menu from './components/Menu'
+import Footer from './components/Footer'
+import Cardsblog from './components/cardsBlog';
+import Sessoes from './components/Sessoes';
+import Slider from './components/Slider';
 //import Slider from './organism/slide';
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
       <Menu />
       <div className='main'>
         <div className='banner'>
-
+          <Slider />
         </div>
         <div className='sessoes'>
           <Sessoes />
