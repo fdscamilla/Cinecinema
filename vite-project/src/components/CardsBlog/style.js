@@ -5,6 +5,7 @@ const Estilocardsblog = styled.div`
  .cards{
   display: flex;
   justify-content: space-between;
+  width: 80%;
  }
 `
 export default Estilocardsblog;

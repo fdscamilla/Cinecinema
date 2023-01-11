@@ -1,16 +1,39 @@
+import React, {useEffect, useState} from 'react'
 import Cardblog from "../../molecules/CardBlog"
 import Estilocardsblog from "./style";
+import axios from 'axios';
 
 function Cardsblog(){
-  return(
-    <Estilocardsblog>
-      <div className="cards">
-        <Cardblog titulo="Título de teste" texto="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" nome="Diego Fernando" time="26 dezembro 2022"/>
-        <Cardblog titulo="Título de teste" texto="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" nome="Diego Fernando" time="26 dezembro 2022"/>
-        <Cardblog titulo="Título de teste" texto="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s" nome="Diego Fernando" time="26 dezembro 2022"/>
-      </div>
-    </Estilocardsblog>
-  )
+
+  let artigos = Get('blog');
+
+    return(
+      <Estilocardsblog>
+        <div className="cards">
+          {artigos.map((slide, key)=>{
+            return(
+              <div>
+                <Cardblog key={key} titulo={slide.titulo} texto={slide.descricao} nome={slide.author} time={slide.date}/>
+              </div>
+            )                
+          })}
+        </div>
+      </Estilocardsblog>
+    )
+}
+
+function Get(endpoint){
+  const [filmes, setFilmes] = useState([])
+  let url = `https://api-cinema-a8oa.onrender.com/${endpoint}`
+
+  useEffect(()=> {
+    axios
+    .get(url)
+    .then((resposta) => setFilmes(resposta.data))
+    .catch((erro) => console.log(erro));
+  }, [])
+
+  return(filmes)
 }
 
 export default Cardsblog;

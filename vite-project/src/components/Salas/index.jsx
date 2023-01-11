@@ -9,8 +9,8 @@ function Salas(props){
           <h3>Sala 1</h3>
         </div>
         <div className="scrumbs">
-          <Scrumbs classe={props.classe} tipo='2d'/>
-          <Scrumbs classe={props.classe} tipo='4d'/>
+          <Scrumbs classe={props.classe} tipo={props.tipo}/>
+          <Scrumbs classe={props.classe} tipo={props.tipo}/>
         </div>
         <div className="hora">
           <h4>13:40</h4>

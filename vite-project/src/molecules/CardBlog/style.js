@@ -3,11 +3,14 @@ import styled from 'styled-components'
 const Estilocardblog = styled.div`
  padding: 15px;
  .cardBlog{
-  
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 400px;
+
   .imagem{
   background-color: black;
   padding-top: 200px;
-  width: 300px;
+  width: 100%;
  }
 
  .autor{
