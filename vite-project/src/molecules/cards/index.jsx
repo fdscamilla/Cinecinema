@@ -1,7 +1,7 @@
 function Cards(props){
   return(
     <div className="card">
-      <img src={props.src}></img>
+      <img src={props.src} onClick={props.onclick}></img>
     </div>
   )
 }

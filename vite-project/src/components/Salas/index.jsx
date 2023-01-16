@@ -6,14 +6,14 @@ function Salas(props){
     <Estilosalas>
       <div className="salaCinema">
         <div className="sala">
-          <h3>Sala 1</h3>
+          <h3>{props.sala}</h3>
         </div>
         <div className="scrumbs">
           <Scrumbs classe={props.classe} tipo={props.tipo}/>
           <Scrumbs classe={props.classe} tipo={props.tipo}/>
         </div>
         <div className="hora">
-          <h4>13:40</h4>
+          <h4>{props.hora}</h4>
         </div>
       </div>
     </Estilosalas>
