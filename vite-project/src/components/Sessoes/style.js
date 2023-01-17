@@ -29,9 +29,18 @@ const Estilosessoes = styled.div`
    .card{
     padding-top: 80%;
     width: 70%;
-    background-color: black;
     margin: 0 auto;
     border-radius: 10px;
+    position: relative;
+
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
    }
   }
 

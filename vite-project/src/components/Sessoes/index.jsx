@@ -10,9 +10,9 @@ function Sessoes(props){
   const weekday = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
   const month = ["01","02","03","04","05","06","07","08","09","10","11","12"];
   const d = new Date();
-  let day = d.getDate()
-  
-  
+  let day = d.getDate();
+  const [cartaz, setCartaz] = useState("https://raw.githubusercontent.com/Diego-Fernando-Reis/json-server/master/img/viagem%20a%20lua.jpg");
+
     return(
       <Estilosessoes>
         <div className="cinema-data">
@@ -22,46 +22,58 @@ function Sessoes(props){
           </div>
           <div className="datas">
             <div className="hoje">
-              <Data diaSemana='Hoje' diaMes={`${day}/${month[d.getMonth()]}`}/>
-              <Data diaSemana={weekday[d.getDay()+1]} diaMes={`${day + 1}/${month[d.getMonth()]}`}/>
-              <Data diaSemana={weekday[d.getDay()+2]} diaMes={`${day + 2}/${month[d.getMonth()]}`}/>
-              <Data diaSemana={weekday[d.getDay()+3]} diaMes={`${day + 3}/${month[d.getMonth()]}`}/>
-              <Data diaSemana={weekday[d.getDay()+4]} diaMes={`${day + 4}/${month[d.getMonth()]}`}/>
-              <Data diaSemana={weekday[d.getDay()+5]} diaMes={`${day + 5}/${month[d.getMonth()]}`}/>
-              <Data diaSemana={weekday[d.getDay()+6]} diaMes={`${day + 6}/${month[d.getMonth()]}`}/>
+              <Data diaSemana='Hoje' diaMes={'23/01'}/>
+              <Data diaSemana={weekday[2]} diaMes={'24/01'}/>
+              <Data diaSemana={weekday[3]} diaMes={'25/01'}/>
+              <Data diaSemana={weekday[4]} diaMes={'26/01'}/>
+              <Data diaSemana={weekday[5]} diaMes={'27/01'}/>
             </div>
           </div>
         </div>
         <div className='filmes'>
           <div className="filmeEscolhido">
-            <Cards />
+            <Cards src={cartaz}/>
           </div>
           <div className='cardSala'>
             <div className="cardsFilmes">
               {filmes.map((slide, key)=>{
                   return(
                     <div>
-                      <Cards key={key} src={slide.cartaz}/>
+                      <Cards key={key} src={slide.cartaz} onclick={()=>setCartaz(
+                        slide.cartaz
+                      )}/>
                     </div>
                     
                   )                
                 })}
             </div>
             <div className="salas">
-              {filmes.map((slide, key)=>{
-                    return(
-                      <div>
-                        <Salas key={key} tipo={slide.indicacao}/>
-                      </div>
-                      
-                    )                
-                  })}
+              {
+                filmes.map((slide, key)=>{
+                  if(slide.id == 1){
+                    console.log(slide.date[0].sala1)
+                  }
+                  for(let i = 0; i<slide.date[0].length; i++){
+                    for(let i = 0; i<slide.date[0][i].length; i++){
+
+                    }
+                  }
+
+                  return(
+                    <div>
+                      <Salas key={key} tipo={slide.indicacao}/>
+                    </div>
+                  )                
+                })
+                }
             </div>
           </div>
           
         </div>
       </Estilosessoes>
     )
+
+    
 }
 
 function Get(endpoint){
@@ -77,5 +89,7 @@ function Get(endpoint){
 
   return(filmes)
 }
+
+
 
 export default Sessoes;
