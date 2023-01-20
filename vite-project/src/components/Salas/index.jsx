@@ -8,6 +8,9 @@ function Salas(props){
         <div className="sala">
           <h3>{props.sala}</h3>
         </div>
+        <div className="filmes">
+          <p>{props.filme}</p>
+        </div>
         <div className="scrumbs">
           <Scrumbs classe={props.classe} tipo={props.tipo}/>
           <Scrumbs classe={props.classe} tipo={props.tipo}/>

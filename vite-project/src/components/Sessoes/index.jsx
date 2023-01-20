@@ -7,12 +7,13 @@ import axios from 'axios';
 
 function Sessoes(props){
   let filmes = Get('filmes');
+  let sessaoCinema = Get(`sessoes`);
   const weekday = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
   const month = ["01","02","03","04","05","06","07","08","09","10","11","12"];
   const d = new Date();
-  let day = d.getDate();
   const [cartaz, setCartaz] = useState("https://raw.githubusercontent.com/Diego-Fernando-Reis/json-server/master/img/viagem%20a%20lua.jpg");
-
+  const [diadaSessao, setDiaSessao] = useState("23/01");
+    
     return(
       <Estilosessoes>
         <div className="cinema-data">
@@ -22,11 +23,21 @@ function Sessoes(props){
           </div>
           <div className="datas">
             <div className="hoje">
-              <Data diaSemana='Hoje' diaMes={'23/01'}/>
-              <Data diaSemana={weekday[2]} diaMes={'24/01'}/>
-              <Data diaSemana={weekday[3]} diaMes={'25/01'}/>
-              <Data diaSemana={weekday[4]} diaMes={'26/01'}/>
-              <Data diaSemana={weekday[5]} diaMes={'27/01'}/>
+              <Data diaSemana='Hoje' diaMes={'23/01'} onclick={()=>setDiaSessao(
+                "23/01"
+              )}/>
+              <Data diaSemana={weekday[2]} diaMes={'24/01'} onclick={()=>setDiaSessao(
+                "24/01"
+              )}/>
+              <Data diaSemana={weekday[3]} diaMes={'25/01'} onclick={()=>setDiaSessao(
+                "25/01"
+              )}/>
+              <Data diaSemana={weekday[4]} diaMes={'26/01'} onclick={()=>setDiaSessao(
+                "26/01"
+              )}/>
+              <Data diaSemana={weekday[5]} diaMes={'27/01'} onclick={()=>setDiaSessao(
+                "27/01"
+              )}/>
             </div>
           </div>
         </div>
@@ -47,25 +58,16 @@ function Sessoes(props){
                   )                
                 })}
             </div>
-            <div className="salas">
+            <div className="salas" id='salas'>
               {
-                filmes.map((slide, key)=>{
-                  if(slide.id == 1){
-                    console.log(slide.date[0].sala1)
+                sessaoCinema.map((slide, key)=>{
+                  if(slide.dia == diadaSessao){
+                    return(
+                      <Salas key={key} sala={slide.sala} filme={slide.filme} data={slide.dia} hora={slide.hora} />
+                    )
                   }
-                  for(let i = 0; i<slide.date[0].length; i++){
-                    for(let i = 0; i<slide.date[0][i].length; i++){
-
-                    }
-                  }
-
-                  return(
-                    <div>
-                      <Salas key={key} tipo={slide.indicacao}/>
-                    </div>
-                  )                
                 })
-                }
+              }
             </div>
           </div>
           
@@ -73,6 +75,13 @@ function Sessoes(props){
       </Estilosessoes>
     )
 
+    /*if(slide.id == key + 1){
+      let meuArray = slide.segunda[0];
+      for(let i = 1; i < Object.keys(meuArray).length; i++){
+        console.log(Object.keys(meuArray)[i])
+        let salas +=<Salas sala={`Sala ${slide.id}`} />
+      }
+    }*/
     
 }
 
@@ -89,7 +98,6 @@ function Get(endpoint){
 
   return(filmes)
 }
-
 
 
 export default Sessoes;
