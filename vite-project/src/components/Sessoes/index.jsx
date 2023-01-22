@@ -54,7 +54,6 @@ function Sessoes(props){
                         slide.cartaz
                       )}/>
                     </div>
-                    
                   )                
                 })}
             </div>
@@ -74,14 +73,6 @@ function Sessoes(props){
         </div>
       </Estilosessoes>
     )
-
-    /*if(slide.id == key + 1){
-      let meuArray = slide.segunda[0];
-      for(let i = 1; i < Object.keys(meuArray).length; i++){
-        console.log(Object.keys(meuArray)[i])
-        let salas +=<Salas sala={`Sala ${slide.id}`} />
-      }
-    }*/
     
 }
 
