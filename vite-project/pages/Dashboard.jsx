@@ -1,6 +1,10 @@
+import Formulario from "../src/components/form-filmes";
+
 function Dashboard(props){
   return (
-    <h2>Dashboard</h2>
+    <>
+      <Formulario />
+    </>
   )
 }
 
