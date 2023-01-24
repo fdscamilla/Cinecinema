@@ -13,6 +13,7 @@ function Sessoes(props){
   const d = new Date();
   const [cartaz, setCartaz] = useState("https://raw.githubusercontent.com/Diego-Fernando-Reis/json-server/master/img/viagem%20a%20lua.jpg");
   const [diadaSessao, setDiaSessao] = useState("23/01");
+  const [filmeSessao, setFilmeSessao] = useState("Viagem à Lua");
     
     return(
       <Estilosessoes>
@@ -50,9 +51,11 @@ function Sessoes(props){
               {filmes.map((slide, key)=>{
                   return(
                     <div>
-                      <Cards key={key} src={slide.cartaz} onclick={()=>setCartaz(
+                      <Cards key={key} src={slide.cartaz} onclick={()=>{setCartaz(
                         slide.cartaz
-                      )}/>
+                      ), setFilmeSessao(
+                slide.filme
+              )}}/>
                     </div>
                   )                
                 })}
@@ -60,7 +63,7 @@ function Sessoes(props){
             <div className="salas" id='salas'>
               {
                 sessaoCinema.map((slide, key)=>{
-                  if(slide.dia == diadaSessao){
+                  if(slide.dia == diadaSessao && slide.filme == filmeSessao){
                     return(
                       <Salas key={key} sala={slide.sala} filme={slide.filme} data={slide.dia} hora={slide.hora} />
                     )
