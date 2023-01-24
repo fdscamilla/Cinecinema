@@ -13,11 +13,20 @@ function Home(){
           <div className='banner'>
             <Slider>
               {filmes.map((slide, key)=>{
-                return(
-                  <div className="carousel-item active h-100">
-                    <img className="d-block w-100 h-100" alt="..." key={key} src={slide.cartaz}/>
-                  </div>
-                )                
+                if(key == 0){
+                  return(
+                    <div className="carousel-item active h-100">
+                      <img className="d-block w-100 h-100" alt="..." key={key} src={slide.cartaz}/>
+                    </div>
+                  )
+                }else{
+                  return(
+                    <div className="carousel-item h-100">
+                      <img className="d-block w-100 h-100" alt="..." key={key} src={slide.cartaz}/>
+                    </div>
+                  )
+                }
+                                
               })}
             </Slider>
           </div>
