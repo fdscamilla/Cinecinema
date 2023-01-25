@@ -1,0 +1,78 @@
+.menu{
+    background-color: #242424;
+    width: 100%;
+    color: white;
+    display: flex;
+    padding: 10px 30px;
+    justify-content: space-between;
+    justify-content: ;
+    
+}
+
+.menu h3 {
+    font-family: 'Oswald'
+}
+
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Chivo Mono', monospace;
+}
+
+ul{
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin: 0 10px;
+}
+
+li a {
+  text-decoration: none;
+  color: white;
+}
+
+.direita{
+  display: flex;
+  flex-direction: column;
+}
+
+.links{
+  display: flex;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.links a{
+  text-decoration: none;
+  color: white;
+  margin: 0 10px;
+}
+
+.busca{
+  display: flex;
+  color: black;
+  font-size: 18px;
+}
+
+input{
+  padding: 10px 5px;
+  width: 360px;
+  border: none;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+input:focus{
+  box-shadow: 0 0 0 0;
+  border: 0 none;
+  outline: 0;
+}
+
+.lupa{
+  padding: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: white;
+}
