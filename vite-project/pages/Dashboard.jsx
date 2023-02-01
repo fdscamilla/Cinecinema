@@ -65,7 +65,7 @@ function Dashboard(props){
           filmes.map((slide, key)=>{
             return(
               <div>
-                <Minicard key={key} src={slide.cartaz} titulo={slide.filme} delete={(e) => deleteFilme(slide.id, e)}/>
+                <Minicard key={key} to={`/EditFilmes/${slide.id}`} src={slide.cartaz} titulo={slide.filme} delete={(e) => deleteFilme(slide.id, e)}/>
               </div>
             )
           })

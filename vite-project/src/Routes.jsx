@@ -5,6 +5,7 @@ import Filmes from '../pages/Filmes'
 import Login from '../pages/Login'
 import Cadastro from '../pages/Cadastro'
 import Dashboard from '../pages/Dashboard'
+import EditFilmes from '../pages/EditFilmes';
 
 
 function RoutesApp(){
@@ -16,6 +17,7 @@ function RoutesApp(){
           <Route path='/Login' element={<Login />} />
           <Route path='/Cadastro' element={<Cadastro />} />
           <Route path='/Dashboard' element={<Dashboard />} />
+          <Route path='/EditFilmes/:id' element={<EditFilmes />} />
         </Routes>
   )
 }
