@@ -23,7 +23,7 @@ function Cardsblog(){
                 {artigos.map((slide, key)=>{
                   return(
                     <div>
-                      <Cardblog key={key} titulo={slide.titulo} texto={slide.descricao} nome={slide.author} time={slide.date}/>
+                      <Cardblog key={key} to={`/Blog/${slide.id}`} titulo={slide.titulo} texto={slide.descricao} nome={slide.author} time={slide.date}/>
                     </div>
                   )                
                 })}

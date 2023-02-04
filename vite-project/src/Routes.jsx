@@ -6,7 +6,9 @@ import Login from '../pages/Login'
 import Cadastro from '../pages/Cadastro'
 import Dashboard from '../pages/Dashboard'
 import EditFilmes from '../pages/EditFilmes';
-
+import EditSessoes from '../pages/EditSessoes';
+import EditBlog from '../pages/EditBlog';
+import Blog from '../pages/Blog';
 
 function RoutesApp(){
   return (
@@ -18,6 +20,9 @@ function RoutesApp(){
           <Route path='/Cadastro' element={<Cadastro />} />
           <Route path='/Dashboard' element={<Dashboard />} />
           <Route path='/EditFilmes/:id' element={<EditFilmes />} />
+          <Route path='/EditSessoes/:id' element={<EditSessoes />} />
+          <Route path='/EditBlog/:id' element={<EditBlog />} />
+          <Route path='/Blog/:id' element={<Blog />} />
         </Routes>
   )
 }

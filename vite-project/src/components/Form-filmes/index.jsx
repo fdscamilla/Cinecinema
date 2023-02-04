@@ -1,9 +1,9 @@
-import EstiloMenu from "./style";
+
 
 function Formulario(props){
   
   return(
-    <EstiloMenu>
+    <>
       <h2>Filmes</h2>
       <form onSubmit={props.onsubmit}> 
         <label for="fname">Nome do Filme:</label><br></br>
@@ -31,7 +31,7 @@ function Formulario(props){
 
       
       
-    </EstiloMenu>
+    </>
   )
 }
 
