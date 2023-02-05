@@ -5,31 +5,38 @@ const Estilosessoes = styled.div`
  margin: 0 auto;
 
  .cinema-data{
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
   justify-content: space-between;
-  
+  width: 100%;
   .datas{
+    width: 100%;
    .hoje{
-    display: flex;
-
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-between;
     .data{
-     margin: 0 8px;
-     
-    border-right: 3px solid black;
+     cursor: pointer;
+     h3{
+      font-size: 20px;
+     }
+     h2{
+      font-size: 22px;
+     }
     }
    }
   }
  }
 
  .filmes{
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% auto;
+  width: 100%;
 
   .filmeEscolhido{
-   width: 50%;
    .card{
     padding-top: 80%;
     width: 70%;
-    margin: 0 auto;
     border-radius: 10px;
     position: relative;
 
@@ -45,13 +52,14 @@ const Estilosessoes = styled.div`
   }
 
   .cardsFilmes{
-   display: flex;
-   
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   justify-content: space-between;
+   width: 100%;
    .card{
     padding-top: 200px;
     width: 150px;
     background-color: black;
-    margin: 0 25px;
     border-radius: 10px;
     position: relative;
 
@@ -65,6 +73,12 @@ const Estilosessoes = styled.div`
       
     }
    }
+  }
+
+  .sala{
+    display: grid;
+   grid-template-columns: auto auto auto auto;
+   justify-content: space-between;
   }
  }
 

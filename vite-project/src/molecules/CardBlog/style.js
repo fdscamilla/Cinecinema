@@ -4,24 +4,27 @@ const Estilocardblog = styled.div`
  padding: 15px;
  .cardBlog{
   overflow: hidden;
-  width: 255px;
+  width: 400px;
   text-align: center;
   border: 1px solid #f0f2f3;
   box-shadow: 0 3px 24px rgb(0 0 0 / 4%);
   border-radius: 8px;
 
   .imagem{
-  background-color: black;
-  padding-top: 200px;
+  height: 200px;
   width: 100%;
+  img{
+    width: 100%;
+    height: 100%;
+  }
  }
 
  .autor{
   display: flex;
 
   .imagem{
-   padding-top: 40px;
-   width: 40px;
+   height: 50px;
+   width: 50px;
    border-radius: 50%;
    background-color: black;
 

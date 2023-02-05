@@ -6,7 +6,9 @@ function Cardblog(props){
     <Estilocardblog>
       <Link to={props.to}>
         <div className="cardBlog">
-          <div className="imagem"></div>
+          <div className="imagem">
+            <img src={props.src}></img>
+          </div>
           <div className="description">
             <p>{props.description}</p>
           </div>
