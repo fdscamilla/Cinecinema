@@ -1,8 +1,10 @@
+import EstiloCardsFilmes from "./style";
+
 function Cardsfilmes(props){
   return (
-    <div>
+    <EstiloCardsFilmes>
       {props.children}
-    </div>
+    </EstiloCardsFilmes>
   )
 }
 

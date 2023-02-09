@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import Loading from '../../src/components/Loading'
 import Slider from "../../src/components/Slider";
 import Sessoes from "../../src/components/Sessoes";
 import Cardsblog from "../../src/components/cardsBlog";
@@ -7,9 +8,11 @@ import Estilomenu from './Style'
 
 function Home(){
   let filmes = Get('filmes');
-
+  const [removeLoading, setRemoveLoading] = useState(false)
     return(
+
       <Estilomenu>
+        {!removeLoading && <Loading />}
         <div className='main'>
           <div className='banner'>
             <Slider>
@@ -38,65 +41,28 @@ function Home(){
             <Cardsblog />
           </div>
         </div>
+        
       </Estilomenu>
       
     )
-}
-
-function Get(endpoint){
-  const [filmes, setFilmes] = useState([])
-  let url = `https://api-cinema-a8oa.onrender.com/${endpoint}`
-
-  useEffect(()=> {
-    axios
-    .get(url)
-    .then((resposta) => setFilmes(resposta.data))
-    .catch((erro) => console.log(erro));
-  }, [])
-
-  return(filmes)
-}
-
-function Post(endpoint){
-  const [filmes, setFilmes] = useState([])
-  let url = `https://api-cinema-a8oa.onrender.com/${endpoint}`
-
-  useEffect(()=> {
-    axios
-    .post(url)
-    .then((resposta) => setFilmes(resposta.data))
-    .catch((erro) => console.log(erro));
-  }, [])
-
-  return(filmes)
-}
-
-function Put(endpoint){
-  const [filmes, setFilmes] = useState([])
-  let url = `https://api-cinema-a8oa.onrender.com/${endpoint}`
-
-  useEffect(()=> {
-    axios
-    .put(url)
-    .then((resposta) => setFilmes(resposta.data))
-    .catch((erro) => console.log(erro));
-  }, [])
-
-  return(filmes)
-}
-
-function Delete(endpoint){
-  const [filmes, setFilmes] = useState([])
-  let url = `https://api-cinema-a8oa.onrender.com/${endpoint}`
-
-  useEffect(()=> {
-    axios
-    .delete(url)
-    .then((resposta) => setFilmes(resposta.data))
-    .catch((erro) => console.log(erro));
-  }, [])
-
-  return(filmes)
+  function Get(endpoint){
+    const [filmes, setFilmes] = useState([])
+    let url = `https://api-cinema-a8oa.onrender.com/${endpoint}`
+  
+    useEffect(()=> {
+      setTimeout(()=>{
+        axios
+        .get(url)
+        .then((resposta) => {
+          setFilmes(resposta.data)
+          setRemoveLoading(true)
+        })
+        .catch((erro) => console.log(erro));
+      }, 3000)
+    }, [])
+  
+    return(filmes)
+  }
 }
 
 export default Home;

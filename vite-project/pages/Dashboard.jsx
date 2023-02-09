@@ -45,6 +45,10 @@ function Dashboard(props){
     }
   );
 
+  const [formFilmes, setformFilmes] = useState(true)
+  const [formSessao, setformSessao] = useState(false)
+  const [formBlog, setformBlog] = useState(false)
+
   function handleChange(event){
     const{name, value} = event.target;
 
@@ -77,9 +81,29 @@ function Dashboard(props){
     axios.delete(`https://api-cinema-a8oa.onrender.com/blog/${id}`)
     .then(res => console.log('Postado', res)).catch(err => console.log(err))
   }
+
+
   return (
     <>
-      <Formulario onchange={
+      <div className="opcoesFormulario">
+        <span onClick={()=>{
+          setformFilmes(true);
+          setformBlog(false);
+          setformSessao(false)
+        }}>Subir Filme</span>
+        <span onClick={()=>{
+          setformFilmes(false);
+          setformBlog(false);
+          setformSessao(true)
+        }}>Subir Sessão</span>
+        <span onClick={()=>{
+          setformFilmes(false);
+          setformBlog(true);
+          setformSessao(false)
+        }}>Subir Artigo</span>
+      </div>
+
+      {formFilmes && <Formulario onchange={
         handleChange
       }
       
@@ -105,9 +129,9 @@ function Dashboard(props){
                 console.log(error);
               })
       }
-      } />
+      } />}
 
-      <FormularioSessao onchange={
+      {formSessao && <FormularioSessao onchange={
         handleChange2
       }
       
@@ -128,9 +152,9 @@ function Dashboard(props){
               })
       }
       }
-      />
+      />}
 
-      <FormularioBlog onchange={
+      {formBlog && <FormularioBlog onchange={
         handleChange3
       }
 
@@ -153,9 +177,9 @@ function Dashboard(props){
               })
       }
       }
-      />
+      />}
 
-      <div className="filmes">
+      {formFilmes && <div className="filmes">
         {
           filmes.map((slide, key)=>{
             return(
@@ -165,9 +189,9 @@ function Dashboard(props){
             )
           })
         }
-      </div>
+      </div>}
 
-      <div className="sessoes">
+      {formSessao && <div className="sessoes">
         {
           sessoes.map((slide, key)=>{
             return(
@@ -177,9 +201,9 @@ function Dashboard(props){
             )
           })
         }
-      </div>
+      </div>}
 
-      <div className="blog">
+      {formBlog && <div className="blog">
         {
           blog.map((slide, key)=>{
             return(
@@ -189,7 +213,7 @@ function Dashboard(props){
             )
           })
         }
-      </div>
+      </div>}
     </>
   )
 

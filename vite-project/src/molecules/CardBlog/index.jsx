@@ -9,18 +9,20 @@ function Cardblog(props){
           <div className="imagem">
             <img src={props.src}></img>
           </div>
-          <div className="description">
-            <p>{props.description}</p>
-          </div>
-          <div className="texto">
-            <h2>{props.titulo}</h2>
-            <p>{props.texto}</p>
-          </div>
-          <div className="autor">
-            <div className="imagem"></div>
-            <div className="textos">
-              <h3>{props.nome}</h3>
-              <p>{props.time}</p>
+          <div className="sub">
+            <div className="description">
+              <p>{props.description}</p>
+            </div>
+            <div className="texto">
+              <h2>{props.titulo}</h2>
+              <p>{props.texto}</p>
+            </div>
+            <div className="autor">
+              <div className="imagem"></div>
+              <div className="textos">
+                <h3>{props.nome}</h3>
+                <p>{props.time}</p>
+              </div>
             </div>
           </div>
         </div>

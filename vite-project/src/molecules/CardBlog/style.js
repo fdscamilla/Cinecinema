@@ -11,11 +11,34 @@ const Estilocardblog = styled.div`
   border-radius: 8px;
 
   .imagem{
-  height: 200px;
-  width: 100%;
-  img{
+    height: 200px;
     width: 100%;
-    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+ }
+
+ .sub{
+  padding: 15px;
+
+  .description{
+    p{
+
+    }
+  }
+
+  .texto{
+    h2{
+      text-decoration: none;
+      color: white;
+      font-size: 25px;
+      margin-bottom: 20px;
+    }
+
+    p{
+      color: white;
+    }
   }
  }
 

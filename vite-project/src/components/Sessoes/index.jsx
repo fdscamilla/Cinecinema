@@ -72,7 +72,6 @@ function Sessoes(props){
               }
             </div>
           </div>
-          
         </div>
       </Estilosessoes>
     )

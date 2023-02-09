@@ -10,14 +10,12 @@ import EditSessoes from '../pages/EditSessoes';
 import EditBlog from '../pages/EditBlog';
 import Blog from '../pages/Blog';
 
-function RoutesApp(){
+function PrivateRoutesApp(){
   return (
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/Cinema' element={<Cinema />} />
           <Route path='/Filmes' element={<Filmes />} />
-          <Route path='/Login' element={<Login />} />
-          <Route path='/Cadastro' element={<Cadastro />} />
           <Route path='/Dashboard' element={<Dashboard />} />
           <Route path='/EditFilmes/:id' element={<EditFilmes />} />
           <Route path='/EditSessoes/:id' element={<EditSessoes />} />
@@ -27,4 +25,4 @@ function RoutesApp(){
   )
 }
 
-export default RoutesApp;
+export default PrivateRoutesApp;

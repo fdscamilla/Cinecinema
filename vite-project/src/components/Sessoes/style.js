@@ -3,7 +3,8 @@ import styled from 'styled-components'
 const Estilosessoes = styled.div`
  max-width: 1200px;
  margin: 0 auto;
-
+ margin-top: 100px;
+ margin-bottom: 200px;
  .cinema-data{
   display: grid;
   grid-template-columns: 50% 50%;
@@ -56,6 +57,7 @@ const Estilosessoes = styled.div`
    grid-template-columns: auto auto auto auto;
    justify-content: space-between;
    width: 100%;
+   margin-bottom: 20px;
    .card{
     padding-top: 200px;
     width: 150px;
@@ -76,9 +78,7 @@ const Estilosessoes = styled.div`
   }
 
   .sala{
-    display: grid;
-   grid-template-columns: auto auto auto auto;
-   justify-content: space-between;
+    
   }
  }
 
