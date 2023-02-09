@@ -4,10 +4,9 @@ import Estilocardsblog from "./style";
 import axios from 'axios';
 import Carousel from 'react-elastic-carousel';
 const breakPoints = [
-  {width: 1, itemsToShow: 1},
-  {width: 550, itemsToShow: 2},
-  {width: 768, itemsToShow: 3},
-  {width: 1200, itemsToShow: 4}
+  {width: 550, itemsToShow: 1},
+  {width: 768, itemsToShow: 2},
+  {width: 1200, itemsToShow: 3}
 ];
 
 function Cardsblog(){
@@ -17,19 +16,15 @@ function Cardsblog(){
     return(
       <Estilocardsblog>
         <Fragment>
-          <section>
-            <div className='row'>
-              <Carousel breakPoints={breakPoints}>
+              <Carousel className='carousel' breakPoints={breakPoints}>
                 {artigos.map((slide, key)=>{
                   return(
                     <div>
-                      <Cardblog key={key} to={`/Blog/${slide.id}`} titulo={slide.titulo} texto={slide.descricao} nome={slide.author} time={slide.date}/>
+                      <Cardblog key={key} to={`/Blog/${slide.id}`} src={slide.capa} titulo={slide.titulo} texto={slide.descricao} nome={slide.author} time={slide.date}/>
                     </div>
                   )                
                 })}
               </Carousel>
-            </div>
-          </section>
         </Fragment>
       </Estilocardsblog>
     )

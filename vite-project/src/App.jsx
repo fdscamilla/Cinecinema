@@ -1,4 +1,4 @@
-import './App.css'
+import '../origem/App.css'
 import Menu from './components/Menu'
 import Footer from './components/Footer'
 import RoutesApp from './Routes'

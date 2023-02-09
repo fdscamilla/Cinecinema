@@ -2,7 +2,8 @@ import styled from "styled-components";
 
 const Estilosalas = styled.div`
  .salaCinema{
-  display: flex;
+  display: grid;
+  grid-template-columns: 15% auto auto 10%;
   justify-content: space-between;
   .scrumbs{
    display: flex;

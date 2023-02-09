@@ -1,6 +1,12 @@
 import Estilomenu from './style'
 import { BiSearch } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
+import { FaHome } from 'react-icons/fa';
+import { MdOutlineTheaters } from 'react-icons/md';
+import { FaTheaterMasks } from 'react-icons/fa';
+import { HiSpeakerWave } from 'react-icons/hi2';
+import { BsTelephoneFill } from 'react-icons/bs';
+import { AiOutlineArrowRight } from 'react-icons/ai';
 
 
 function Menu(props){
@@ -11,14 +17,17 @@ function Menu(props){
           <h3><a href=''>CineCinema</a></h3>
         </div>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/Cinema">Cinemas</Link></li>
-          <li><Link to="/Filmes">Filmes</Link></li>
+          <li><Link to="/">
+          <AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowOne'/><FaHome className='icon'/>Home</Link></li>
+          <li><Link to="/Cinema"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowTwo'/><FaTheaterMasks className='icon'/>Cinemas</Link></li>
+          <li><Link to="/Filmes"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowThree'/><MdOutlineTheaters className='icon'/>Filmes</Link></li>
+          <li><Link to="/Filmes"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowFour'/><HiSpeakerWave className='icon'/>Blog</Link></li>
+          <li><Link to="/Filmes"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowFive'/><BsTelephoneFill className='icon'/>Contato</Link></li>
         </ul>        
         <div className="direita">
           <div className="links">
-            <Link to="/Login">login</Link><p>|</p>
-            <Link to="/Cadastro">Cadastre-se</Link>
+            <Link className='cadastro' to="/Cadastro">Cadastre-se</Link>
+            <Link className='login' to="/Login">login</Link>
           </div>
           <div className='busca'>
             <input type='search' /><div className='lupa'><BiSearch /></div>

@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from "react";
 import axios from "axios";
-import Slider from "../src/components/Slider";
-import Sessoes from "../src/components/Sessoes";
-import Cardsblog from "../src/components/cardsBlog";
+import Slider from "../../src/components/Slider";
+import Sessoes from "../../src/components/Sessoes";
+import Cardsblog from "../../src/components/cardsBlog";
+import Estilomenu from './Style'
 
 function Home(){
   let filmes = Get('filmes');
 
     return(
-      <>
+      <Estilomenu>
         <div className='main'>
           <div className='banner'>
             <Slider>
@@ -37,7 +38,7 @@ function Home(){
             <Cardsblog />
           </div>
         </div>
-      </>
+      </Estilomenu>
       
     )
 }
