@@ -5,7 +5,7 @@ import axios from 'axios';
 import Carousel from 'react-elastic-carousel';
 const breakPoints = [
   {width: 550, itemsToShow: 1},
-  {width: 768, itemsToShow: 2},
+  {width: 800, itemsToShow: 2},
   {width: 1200, itemsToShow: 3}
 ];
 

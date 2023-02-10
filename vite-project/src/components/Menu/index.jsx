@@ -7,9 +7,15 @@ import { FaTheaterMasks } from 'react-icons/fa';
 import { HiSpeakerWave } from 'react-icons/hi2';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { AiOutlineArrowRight } from 'react-icons/ai';
+import { useState } from 'react';
 
 
 function Menu(props){
+  const [isActive, setActive] = useState("");
+  const ToggleClass = () => {
+    setActive(isActive == "is-active" ? "" : "is-active");
+  }
+  
   return(
     <Estilomenu>
       <div className="menu">
@@ -26,9 +32,14 @@ function Menu(props){
         </ul>        
         <div className="direita">
           <div className="links">
-            <Link className='cadastro' to="/Cadastro">Cadastre-se</Link>
+            <button className='cadastro'><Link to="/Cadastro">Cadastre-se</Link></button>
             <Link className='login' to="/Login">login</Link>
           </div>
+          <button className={`hamburger hamburger--elastic ${isActive}`} onClick={ToggleClass} type="button">
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
+            </span>
+          </button>
           <div className='busca'>
             <input type='search' /><div className='lupa'><BiSearch /></div>
           </div> 

@@ -10,6 +10,7 @@ const Estilosessoes = styled.div`
   grid-template-columns: 50% 50%;
   justify-content: space-between;
   width: 100%;
+  padding: 0 20px;
   .datas{
     width: 100%;
    .hoje{
@@ -31,9 +32,9 @@ const Estilosessoes = styled.div`
 
  .filmes{
   display: grid;
-  grid-template-columns: 50% auto;
+  grid-template-columns: 50% 50%;
   width: 100%;
-
+  padding: 0 20px;
   .filmeEscolhido{
    .card{
     padding-top: 80%;
@@ -56,15 +57,17 @@ const Estilosessoes = styled.div`
    display: grid;
    grid-template-columns: auto auto auto auto;
    justify-content: space-between;
-   width: 100%;
+   max-width: 600px;
    margin-bottom: 20px;
+   padding: 8px;
+   overflow-x: scroll;
    .card{
     padding-top: 200px;
     width: 150px;
     background-color: black;
     border-radius: 10px;
     position: relative;
-
+    margin-right: 20px;
     img{
       position: absolute;
       top: 0;
@@ -81,7 +84,6 @@ const Estilosessoes = styled.div`
     
   }
  }
-
  
 `
 export default Estilosessoes;

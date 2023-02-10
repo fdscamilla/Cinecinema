@@ -4,10 +4,9 @@ const estiloMenu = styled.div`
   background-color: rgb(7, 7, 7);
   width: 100%;
   color: white;
-  padding: 0;
   .menu{
     display: grid;
-    grid-template-columns: 10% 800px 13%;
+    grid-template-columns: 12% 800px 13%;
     height: 70px;
     max-width: 1400px;
     margin: 0 auto;
@@ -15,7 +14,8 @@ const estiloMenu = styled.div`
     justify-content: space-around;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     .logo{
-      height: 100%;
+      display: flex;
+      align-items: center;
       a{
         color: white;
         text-decoration: none;
@@ -30,7 +30,6 @@ const estiloMenu = styled.div`
       align-content: center;
       justify-content: end;
       height: 100%;
-    
       .animate__animated.animate__slideInLeft{
         --animate-duration: 0.5s;
       }
@@ -48,7 +47,6 @@ const estiloMenu = styled.div`
         }
         a{
           text-decoration: none;
-          color: white;
           font-weight: bold;
           font-size: 18px;
           color: rgb(177, 177, 177);
@@ -72,7 +70,16 @@ const estiloMenu = styled.div`
     }
 
     .direita{
-      height: 100%;
+      display: flex;
+      align-items: center;
+      .hamburger{
+        display: none;
+        .hamburger-box{
+          .hamburger-inner{
+          }
+          
+        }
+      }
       .links{
         .cadastro{
           background-color: rgb(31, 128, 255);
@@ -116,6 +123,54 @@ const estiloMenu = styled.div`
         }
       }
     }
+  }
+
+  @media (max-width: 1200px){
+    .menu{
+      padding: 10px;
+      grid-template-columns: 13% 680px 14%;
+      .logo{
+        padding: 0 10px;
+
+        a{
+          font-size: 22px;
+        }
+      }
+      ul{
+        li{
+        margin-right: 22px;
+        padding: 5px 12px;
+        border-radius: 8px;
+        a{
+          font-size: 16px;
+          
+        }
+      }
+      }
+    }  
+  }
+
+  @media (max-width: 1000px){
+    .menu{
+      grid-template-areas: ". logo . direita.";
+      grid-template-columns:  2% 12% 72% 12% 2%;
+      .logo{
+        grid-area: logo;
+      }
+      ul{
+        display: none;
+      }
+
+      .direita{
+        grid-area: direita;
+        .links{
+          display: none;
+        }
+        .hamburger{
+        display: block;
+      }
+      }
+    }  
   }
 `;
 

@@ -1,9 +1,10 @@
-import Formulario from "../src/components/form-filmes";
+import Formulario from "../../src/components/form-filmes";
 import axios from 'axios'
 import { useState, useEffect } from "react";
-import Minicard from "../src/components/Minicard";
-import FormularioSessao from "../src/components/Form-Sessao";
-import FormularioBlog from "../src/components/Form-Blog";
+import Minicard from "../../src/components/Minicard";
+import FormularioSessao from "../../src/components/Form-Sessao";
+import FormularioBlog from "../../src/components/Form-Blog";
+import EstiloDashboard from "./style";
 
 function Dashboard(props){
   let filmes = Get('filmes');
@@ -84,7 +85,7 @@ function Dashboard(props){
 
 
   return (
-    <>
+    <EstiloDashboard>
       <div className="opcoesFormulario">
         <span onClick={()=>{
           setformFilmes(true);
@@ -214,7 +215,7 @@ function Dashboard(props){
           })
         }
       </div>}
-    </>
+    </EstiloDashboard>
   )
 
   function Get(endpoint){

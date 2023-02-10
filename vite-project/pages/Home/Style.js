@@ -5,6 +5,7 @@ const estiloMenu = styled.div`
   width: 100%;
   color: white;
   padding: 0;
+  padding-bottom: 80px;
   
 `;
 

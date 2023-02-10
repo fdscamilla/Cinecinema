@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const estiloLogin = styled.div`
+  min-height: 100vh;
   .login-container {
    margin: 25px auto; 
   display: flex;

@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Estilomenu from './style'
 import { BiSearch } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
@@ -15,6 +16,10 @@ function Menu2(props){
     setAuth(false),
     navigate('/Login');
   };
+  const [isActive, setActive] = useState("");
+  const ToggleClass = () => {
+    setActive(isActive == "is-active" ? "" : "is-active");
+  }
   return(
     <Estilomenu>
       <div className="menu">
@@ -33,6 +38,11 @@ function Menu2(props){
           <div className="links">
             <div className='login' onClick={logout}>Sair</div>
           </div>
+          <button className={`hamburger hamburger--elastic ${isActive}`} onClick={ToggleClass} type="button">
+            <span className="hamburger-box">
+              <span className="hamburger-inner"></span>
+            </span>
+          </button>
           <div className='busca'>
             <input type='search' /><div className='lupa'><BiSearch /></div>
           </div> 

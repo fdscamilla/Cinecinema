@@ -2,9 +2,7 @@ import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from '../pages/Home/Home';
 import Cinema from '../pages/Cinema'
 import Filmes from '../pages/Filmes'
-import Login from '../pages/Login/Login'
-import Cadastro from '../pages/Cadastro/Cadastro'
-import Dashboard from '../pages/Dashboard'
+import Dashboard from '../pages/Dashboard/Dashboard'
 import EditFilmes from '../pages/EditFilmes';
 import EditSessoes from '../pages/EditSessoes';
 import EditBlog from '../pages/EditBlog';
