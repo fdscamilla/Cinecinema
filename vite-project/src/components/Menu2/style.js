@@ -4,6 +4,7 @@ const estiloMenu = styled.div`
   background-color: rgb(7, 7, 7);
   width: 100%;
   color: white;
+  padding: 0;
   .menu{
     display: grid;
     grid-template-columns: 12% 800px 13%;
@@ -14,6 +15,7 @@ const estiloMenu = styled.div`
     justify-content: space-around;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     .logo{
+      height: 100%;
       display: flex;
       align-items: center;
       a{
@@ -30,6 +32,7 @@ const estiloMenu = styled.div`
       align-content: center;
       justify-content: end;
       height: 100%;
+    
       .animate__animated.animate__slideInLeft{
         --animate-duration: 0.5s;
       }
@@ -47,6 +50,7 @@ const estiloMenu = styled.div`
         }
         a{
           text-decoration: none;
+          color: white;
           font-weight: bold;
           font-size: 18px;
           color: rgb(177, 177, 177);

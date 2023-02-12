@@ -50,12 +50,8 @@ function Sessoes(props){
             <div className="cardsFilmes">
               {filmes.map((slide, key)=>{
                   return(
-                    <div>
-                      <Cards key={key} src={slide.cartaz} onclick={()=>{setCartaz(
-                        slide.cartaz
-                      ), setFilmeSessao(
-                slide.filme
-              )}}/>
+                    <div className='cards'>
+                      <Cards key={key} src={slide.cartaz} onclick={()=>{setCartaz(slide.cartaz), setFilmeSessao(slide.filme)}}/>
                     </div>
                   )                
                 })}
@@ -72,7 +68,6 @@ function Sessoes(props){
               }
             </div>
           </div>
-          
         </div>
       </Estilosessoes>
     )

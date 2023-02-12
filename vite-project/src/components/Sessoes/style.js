@@ -3,33 +3,42 @@ import styled from 'styled-components'
 const Estilosessoes = styled.div`
  max-width: 1200px;
  margin: 0 auto;
-
+ margin-top: 100px;
+ margin-bottom: 200px;
  .cinema-data{
-  display: flex;
+  display: grid;
+  grid-template-columns: 50% 50%;
   justify-content: space-between;
-  
+  width: 100%;
+  padding: 0 20px;
   .datas{
+    width: 100%;
    .hoje{
-    display: flex;
-
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    justify-content: space-between;
     .data{
-     margin: 0 8px;
-     
-    border-right: 3px solid black;
+     cursor: pointer;
+     h3{
+      font-size: 20px;
+     }
+     h2{
+      font-size: 22px;
+     }
     }
    }
   }
  }
 
  .filmes{
-  display: flex;
-
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100%;
+  padding: 0 20px;
   .filmeEscolhido{
-   width: 50%;
    .card{
     padding-top: 80%;
     width: 70%;
-    margin: 0 auto;
     border-radius: 10px;
     position: relative;
 
@@ -45,16 +54,20 @@ const Estilosessoes = styled.div`
   }
 
   .cardsFilmes{
-   display: flex;
-   
+   display: grid;
+   grid-template-columns: auto auto auto auto;
+   justify-content: space-between;
+   max-width: 600px;
+   margin-bottom: 20px;
+   padding: 8px;
+   overflow-x: scroll;
    .card{
     padding-top: 200px;
     width: 150px;
     background-color: black;
-    margin: 0 25px;
     border-radius: 10px;
     position: relative;
-
+    margin-right: 20px;
     img{
       position: absolute;
       top: 0;
@@ -66,8 +79,11 @@ const Estilosessoes = styled.div`
     }
    }
   }
- }
 
+  .sala{
+    
+  }
+ }
  
 `
 export default Estilosessoes;

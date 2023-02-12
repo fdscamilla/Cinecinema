@@ -1,8 +1,10 @@
+import EstiloCards from "./style";
+
 function Cards(props){
   return(
-    <div className="card">
+    <EstiloCards className="card">
       <img src={props.src} onClick={props.onclick}></img>
-    </div>
+    </EstiloCards>
   )
 }
 

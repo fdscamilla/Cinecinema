@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import Estilomenu from './style'
 import { BiSearch } from 'react-icons/bi'
 import { Link } from 'react-router-dom'
@@ -7,15 +8,18 @@ import { FaTheaterMasks } from 'react-icons/fa';
 import { HiSpeakerWave } from 'react-icons/hi2';
 import { BsTelephoneFill } from 'react-icons/bs';
 import { AiOutlineArrowRight } from 'react-icons/ai';
-import { useState } from 'react';
 
 
-function Menu(props){
+function Menu2(props){
+  const logout = () => {
+    signOut(auth),
+    setAuth(false),
+    navigate('/Login');
+  };
   const [isActive, setActive] = useState("");
   const ToggleClass = () => {
     setActive(isActive == "is-active" ? "" : "is-active");
   }
-  
   return(
     <Estilomenu>
       <div className="menu">
@@ -32,8 +36,7 @@ function Menu(props){
         </ul>        
         <div className="direita">
           <div className="links">
-            <button className='cadastro'><Link to="/Cadastro">Cadastre-se</Link></button>
-            <Link className='login' to="/Login">login</Link>
+            <div className='login' onClick={logout}>Sair</div>
           </div>
           <button className={`hamburger hamburger--elastic ${isActive}`} onClick={ToggleClass} type="button">
             <span className="hamburger-box">
@@ -49,4 +52,4 @@ function Menu(props){
   )
 }
 
-export default Menu;
+export default Menu2;
