@@ -14,9 +14,20 @@ function Cadastro(props){
     error,
   ] = useCreateUserWithEmailAndPassword(auth);
 
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/
+
   function handleSignOut(e){
     e.preventDefault();
-    createUserWithEmailAndPassword(email, password);
+    if(emailRegex.test(email) && passwordRegex.test(password)){
+      createUserWithEmailAndPassword(email, password);
+      alert('Dados Enviados com sucesso!');
+      setAuth(true), navigate('/');
+    }else{
+      alert('Email ou Senha inválidos!');
+    }
+    
   }
 
   return (

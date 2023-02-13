@@ -1,8 +1,15 @@
 import styled from 'styled-components';
 
 const EstiloMinicard = styled.div`
-  width: 33%;
+  max-width: 1000px;
+  margin: 0 auto;
   display: flex;
+  border: 0.2px solid white;
+  border-radius: 10px;
+  height: 50px;
+  overflow: hidden;
+  margin-bottom: 20px;
+
   .imagem{
     img{
       width: 80px;

@@ -2,26 +2,30 @@ import styled from 'styled-components'
 
 const Estilocardblog = styled.div`
  padding: 15px;
+ .link{
+  text-decoration: none;
+ }
  .cardBlog{
   overflow: hidden;
   width: 400px;
-  text-align: center;
-  border: 1px solid #f0f2f3;
+  text-align: left;
   box-shadow: 0 3px 24px rgb(0 0 0 / 4%);
-  border-radius: 8px;
+  height: 500px;
 
   .imagem{
-    height: 200px;
+    height: 250px;
     width: 100%;
+    z-index: 2;
+    overflow: hidden;
     img{
       width: 100%;
-      height: 100%;
+      height: auto;
+      z-index: 1;
     }
  }
 
  .sub{
-  padding: 15px;
-
+  z-index: 3;
   .description{
     p{
 
@@ -34,6 +38,7 @@ const Estilocardblog = styled.div`
       color: white;
       font-size: 25px;
       margin-bottom: 20px;
+
     }
 
     p{
@@ -45,12 +50,14 @@ const Estilocardblog = styled.div`
  .autor{
   display: flex;
 
-  .imagem{
-   height: 50px;
-   width: 50px;
-   border-radius: 50%;
-   background-color: black;
-
+  h3{
+    font-size: 16px;
+    margin-bottom: 0;
+    color: white;
+  }
+  p{
+    font-size: 14px;
+    color: white;
   }
  }
 
