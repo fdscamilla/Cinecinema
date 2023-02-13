@@ -9,21 +9,25 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.9.11",
     "animate.css": "^4.1.1",
     "axios": "^1.2.3",
     "firebase": "^9.17.1",
+    "formik": "^2.2.9",
     "framer-motion": "^8.0.1",
     "react": "^18.2.0",
     "react-background-slider": "^3.0.0-0",
     "react-dom": "^18.2.0",
     "react-elastic-carousel": "^0.11.5",
     "react-firebase-hooks": "^5.1.1",
+    "react-hook-form": "^7.43.1",
     "react-icons": "^4.7.1",
     "react-is": "^18.2.0",
     "react-router-dom": "^6.6.2",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "yup": "^1.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.26",

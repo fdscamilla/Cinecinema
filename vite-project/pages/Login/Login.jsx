@@ -20,15 +20,29 @@ function Login(props) {
   const {setAuth, authenticate} = useContext(AuthContext)
   console.log('auth', authenticate)
 
+  const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,30}$/
+
+
   function handleSignIn(e){
-    e.preventDefault();
-    signInWithEmailAndPassword(email, password)
+    e.preventDefault()
+    if(emailRegex.test(email) && passwordRegex.test(password)){
+      signInWithEmailAndPassword(email, password);
+      if(user){
+        alert('Dados Enviados com sucesso!');
+        setAuth(true), navigate('/')
+      }else{
+        alert('Você não está cadastrado!')
+      }
+      
+    }else{
+      alert('Email ou Senha inválidos!');
+    }
+    
   }
 
-  if(user){
-    setAuth(true), navigate('/Dashboard')
-  }
-
+  
   return (
     <EstiloLogin>
       <div className='login-container'>
@@ -50,7 +64,12 @@ function Login(props) {
             onChange={(e) => setPassword(e.target.value)}
           />
           <Link to=''>Esqueceu a Senha?</Link>
-          <button type='submit' onClick={handleSignIn}>Entrar</button>
+          <button type='submit' onClick={handleSignIn}><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              Entrar
+          </button>
         </form>
         <div className='regitrar-se'>
           <p>Ainda não tenho uma Conta. <Link to='/Cadastro'>Quero me registrar</Link></p>

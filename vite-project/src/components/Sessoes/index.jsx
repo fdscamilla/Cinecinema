@@ -4,6 +4,7 @@ import Salas from '../Salas';
 import Data from '../../molecules/Data';
 import Estilosessoes from './style';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 
 function Sessoes(props){
   let filmes = Get('filmes');
@@ -61,7 +62,7 @@ function Sessoes(props){
                 sessaoCinema.map((slide, key)=>{
                   if(slide.dia == diadaSessao && slide.filme == filmeSessao){
                     return(
-                      <Salas key={key} sala={slide.sala} filme={slide.filme} data={slide.dia} hora={slide.hora} />
+                      <Link to='/Login'><Salas key={key} sala={slide.sala} filme={slide.filme} data={slide.dia} hora={slide.hora} /></Link>
                     )
                   }
                 })
