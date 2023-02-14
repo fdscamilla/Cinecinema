@@ -1,9 +1,12 @@
-import Formulario from "../src/components/Form-filmes";
+import Formulario from "../../src/components/Form-filmes";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import EstiloEdit from "./style"
+import Loading from '../../src/components/Loading'
 
 function EditFilme(props){
+  const [removeLoading, setRemoveLoading] = useState(false)
  const [dados, setdados] = useState(
   {
     filme: '',
@@ -41,13 +44,14 @@ function EditFilme(props){
     indicacao: res.data.indicacao,
     cartaz: res.data.cartaz,
     elenco: res.data.elenco
-    });
+    }, setRemoveLoading(true));
   });
  }, [])
  
 
  return (
-   <>
+   <EstiloEdit>
+    {!removeLoading && <Loading />}
     <Formulario onchange={
       handleChange
      } filme={dados.filme} sinopse={dados.sinopse} genero={dados.genero} trailler={dados.trailler} situacao={dados.situacao} duracao={dados.duracao} rotten={dados.rotten} indicacao={dados.indicacao} cartaz={dados.cartaz} elenco={dados.elenco} 
@@ -75,7 +79,7 @@ function EditFilme(props){
               })
       }}
      />
-   </>
+   </EstiloEdit>
  )
 }
 

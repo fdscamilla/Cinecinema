@@ -3,10 +3,10 @@ import Home from '../pages/Home/Home';
 import Cinema from '../pages/Cinema'
 import Filmes from '../pages/Filmes'
 import Dashboard from '../pages/Dashboard/Dashboard'
-import EditFilmes from '../pages/EditFilmes';
-import EditSessoes from '../pages/EditSessoes';
-import EditBlog from '../pages/EditBlog';
-import Blog from '../pages/Blog';
+import EditFilmes from '../pages/Edits/EditFilmes';
+import EditSessoes from '../pages/Edits/EditSessoes';
+import EditBlog from '../pages/Edits/EditBlog';
+import Blog from '../pages/Blog/Blog';
 
 function PrivateRoutesApp(){
   return (
