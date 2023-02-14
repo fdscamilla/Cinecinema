@@ -101,10 +101,9 @@ const Estilosessoes = styled.div`
   }
 
   .cardsFilmes{
-   display: grid;
+   display: flex;
    grid-template-columns: auto auto auto auto;
    justify-content: space-between;
-   max-width: 600px;
    margin-bottom: 20px;
    padding: 8px;
    overflow-x: scroll;
@@ -156,6 +155,18 @@ const Estilosessoes = styled.div`
       }
             
     }
+  }
+ }
+
+ @media (max-width: 1000px){
+  .filmes{
+    grid-template-columns: 100%;
+    .cardsFilmes{
+      max-width: 100%;
+    }
+  }
+  .filmeEscolhido{
+    display: none;
   }
  }
  

@@ -5,11 +5,13 @@ import Minicard from "../../src/components/Minicard";
 import FormularioSessao from "../../src/components/Form-Sessao";
 import FormularioBlog from "../../src/components/Form-Blog";
 import EstiloDashboard from "./style";
+import Loading from '../../src/components/Loading'
 
 function Dashboard(props){
   let filmes = Get('filmes');
   let sessoes = Get('sessoes');
   let blog = Get('blog');
+  const [removeLoading, setRemoveLoading] = useState(false)
 
   const [dados, setdados] = useState(
     {
@@ -86,6 +88,7 @@ function Dashboard(props){
 
   return (
     <EstiloDashboard>
+      {!removeLoading && <Loading />}
       <div className="opcoesFormulario">
         <span onClick={()=>{
           setformFilmes(true);
@@ -225,8 +228,12 @@ function Dashboard(props){
     useEffect(()=> {
       axios
       .get(url)
-      .then((resposta) => setFilmes(resposta.data))
+      .then((resposta) => {
+        setFilmes(resposta.data)
+        setRemoveLoading(true)
+      })
       .catch((erro) => console.log(erro));
+      
     }, [])
   
     return(filmes)

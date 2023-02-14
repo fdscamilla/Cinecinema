@@ -35,9 +35,15 @@ function Home(){
             </Slider>
           </div>
           <div className='sessoes'>
+              <div className="title">
+                <h2>Nossas <span>Sessões</span></h2>
+              </div>
             <Sessoes />
           </div>
           <div className='blog'>
+            <div className="title">
+              <h2>Notícias</h2>
+            </div>
             <Cardsblog />
           </div>
         </div>

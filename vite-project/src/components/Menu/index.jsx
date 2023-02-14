@@ -34,6 +34,17 @@ function Menu(props){
           <li><Link to="/Filmes"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowThree'/><MdOutlineTheaters className='icon'/>Filmes</Link></li>
           <li><Link to="/Filmes"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowFour'/><HiSpeakerWave className='icon'/>Blog</Link></li>
           <li><Link to="/Filmes"><AiOutlineArrowRight className='animate__animated arrow animate__slideInLeft' id='arrowFive'/><BsTelephoneFill className='icon'/>Contato</Link></li>
+          <div className="direita2">
+            <div className="links">
+              <button className='cadastro'>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <Link to="/Cadastro">Cadastre-se</Link></button>
+              <Link className='login' to="/Login">login</Link>
+            </div>
+          </div>
         </ul>        
         <div className="direita">
           <div className="links">
