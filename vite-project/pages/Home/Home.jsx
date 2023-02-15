@@ -3,7 +3,7 @@ import axios from "axios";
 import Loading from '../../src/components/Loading'
 import Slider from "../../src/components/Slider";
 import Sessoes from "../../src/components/Sessoes";
-import Cardsblog from "../../src/components/cardsBlog";
+import Cardsblog from "../../src/components/CardsBlog";
 import Estilomenu from './Style'
 
 function Home(){

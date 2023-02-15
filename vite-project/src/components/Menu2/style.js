@@ -5,6 +5,9 @@ const estiloMenu = styled.div`
   width: 100%;
   color: white;
   padding: 0;
+  position: fixed;
+  z-index: 999;
+  top: 0;
   .menu{
     display: grid;
     grid-template-columns: 12% 800px 13%;
