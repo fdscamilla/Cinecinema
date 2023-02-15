@@ -1,4 +1,4 @@
-import Formulario from "../../src/components/form-filmes";
+import Formulario from "../../src/components/Form-filmes";
 import axios from 'axios'
 import { useState, useEffect } from "react";
 import Minicard from "../../src/components/Minicard";
