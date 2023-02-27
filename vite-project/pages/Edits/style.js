@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const estiloDashboard = styled.div`
+const estiloEdit = styled.div`
   min-height: 100vh;
   background-color: black;
   color: white;
@@ -70,4 +70,4 @@ const estiloDashboard = styled.div`
   }
 `;
 
-export default estiloDashboard;
+export default estiloEdit;

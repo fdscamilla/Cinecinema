@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import EstiloBlog from './style'
+import Loading from '../../src/components/Loading'
 
 function Blog(props){
+  const [removeLoading, setRemoveLoading] = useState(false)
  const [dados, setdados] = useState(
   {
     titulo: '',
@@ -30,21 +33,31 @@ function Blog(props){
     capa: res.data.capa,
     author: res.data.author,
     date: res.data.date
-    });
+    }, setRemoveLoading(true));
   });
  }, [])
  
 
  return (
-   <>
-    <h2>{dados.titulo}</h2>
-    <div className="imagem-capa">
-      <img src={dados.capa}></img>
+   <EstiloBlog>
+    {!removeLoading && <Loading />}
+    <div className="area">
+        <div className="titulo">
+          <h2>{dados.titulo}</h2>
+        </div>
+        <div className="imagem-capa">
+          <img src={dados.capa}></img>
+        </div>
+        <div className="info">
+          <span>{dados.author}</span>
+          <span>{dados.date}</span>
+        </div>
+        <div className="conteudo">
+          <p>{dados.conteudo}</p>
+        </div>
+        <div className="lateral"></div>
     </div>
-    <span>{dados.author}</span>
-    <span>{dados.date}</span>
-    <p>{dados.conteudo}</p>
-   </>
+   </EstiloBlog>
  )
 }
 

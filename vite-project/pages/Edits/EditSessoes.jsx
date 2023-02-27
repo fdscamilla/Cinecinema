@@ -1,9 +1,12 @@
-import FormularioSessao from "../src/components/Form-Sessao";
+import FormularioSessao from "../../src/components/Form-Sessao";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import EstiloEdit from "./style"
+import Loading from '../../src/components/Loading'
 
 function EditSessoes(props){
+  const [removeLoading, setRemoveLoading] = useState(false)
  const [dados, setdados] = useState(
   {
     filme: '',
@@ -29,13 +32,14 @@ function EditSessoes(props){
     dia: res.data.dia,
     hora: res.data.hora,
     sala: res.data.sala
-    });
+    }, setRemoveLoading(true));
   });
  }, [])
  
 
  return (
-   <>
+   <EstiloEdit>
+    {!removeLoading && <Loading />}
     <FormularioSessao onchange={
       handleChange
      } filme={dados.filme} dia={dados.dia} hora={dados.hora} sala={dados.sala} 
@@ -57,7 +61,7 @@ function EditSessoes(props){
               })
       }}
      />
-   </>
+   </EstiloEdit>
  )
 }
 

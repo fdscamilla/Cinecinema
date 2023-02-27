@@ -1,11 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useContext} from 'react';
 import Cards from '../../molecules/cards';
 import Salas from '../Salas';
 import Data from '../../molecules/Data';
 import Estilosessoes from './style';
 import axios from 'axios';
+import {Link} from 'react-router-dom'
+import { AuthContext } from '../../../src/Contexts/AuthContext';
+
+
 
 function Sessoes(props){
+  const {setAuth, authenticate} = useContext(AuthContext)
   let filmes = Get('filmes');
   let sessaoCinema = Get(`sessoes`);
   const weekday = ["Domingo","Segunda","Terça","Quarta","Quinta","Sexta","Sábado"];
@@ -14,7 +19,6 @@ function Sessoes(props){
   const [cartaz, setCartaz] = useState("https://raw.githubusercontent.com/Diego-Fernando-Reis/json-server/master/img/viagem%20a%20lua.jpg");
   const [diadaSessao, setDiaSessao] = useState("23/01");
   const [filmeSessao, setFilmeSessao] = useState("Viagem à Lua");
-    
     return(
       <Estilosessoes>
         <div className="cinema-data">
@@ -61,7 +65,7 @@ function Sessoes(props){
                 sessaoCinema.map((slide, key)=>{
                   if(slide.dia == diadaSessao && slide.filme == filmeSessao){
                     return(
-                      <Salas key={key} sala={slide.sala} filme={slide.filme} data={slide.dia} hora={slide.hora} />
+                      <Link to={authenticate == true ? "/Dashboard" : "/Login"}><Salas key={key} sala={slide.sala} filme={slide.filme} data={slide.dia} hora={slide.hora} /></Link>
                     )
                   }
                 })

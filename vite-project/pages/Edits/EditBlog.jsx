@@ -1,9 +1,12 @@
-import FormularioBlog from "../src/components/Form-Blog";
+import FormularioBlog from "../../src/components/Form-Blog";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import EstiloEdit from "./style";
+import Loading from '../../src/components/Loading'
 
 function EditBlog(props){
+  const [removeLoading, setRemoveLoading] = useState(false)
  const [dados, setdados] = useState(
   {
     titulo: '',
@@ -33,13 +36,14 @@ function EditBlog(props){
     capa: res.data.capa,
     author: res.data.author,
     date: res.data.date
-    });
+    }, setRemoveLoading(true));
   });
  }, [])
  
 
  return (
-   <>
+   <EstiloEdit>
+    {!removeLoading && <Loading />}
     <FormularioBlog onchange={
       handleChange
      } titulo={dados.titulo} conteudo={dados.conteudo} descricao={dados.descricao} capa={dados.capa} author={dados.author} date={dados.date}
@@ -63,7 +67,7 @@ function EditBlog(props){
               })
       }}
      />
-   </>
+   </EstiloEdit>
  )
 }
 

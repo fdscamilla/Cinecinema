@@ -3,7 +3,7 @@ import EstiloMenu from "./style";
 function FormularioSessao(props){
   
   return(
-    <EstiloMenu>
+    <>
       <h2>Sessoes</h2>
       <form onSubmit={props.onsubmit}> 
         <label for="fname">Nome do Filme:</label><br></br>
@@ -16,7 +16,7 @@ function FormularioSessao(props){
         <input type="text" id="sala" name="sala" value={props.sala} onChange={props.onchange}/>
         <input type="submit" value="Submit" />
       </form>
-    </EstiloMenu>
+    </>
   )
 }
 

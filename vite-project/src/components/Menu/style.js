@@ -4,6 +4,10 @@ const estiloMenu = styled.div`
   background-color: rgb(7, 7, 7);
   width: 100%;
   color: white;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  border-bottom: 0.2px solid rgba(255, 255, 255, 0.15);
   .menu{
     display: grid;
     grid-template-columns: 12% 800px 13%;
@@ -52,6 +56,10 @@ const estiloMenu = styled.div`
           color: rgb(177, 177, 177);
           
         }
+        
+      }
+      .direita2{
+          display: none;
       }
       li:hover{
         background-color: rgb(194, 220, 255);
@@ -82,9 +90,87 @@ const estiloMenu = styled.div`
       }
       .links{
         .cadastro{
-          background-color: rgb(31, 128, 255);
+          border: none;
+          position: relative;
+          display: inline-block;
           padding: 5px 10px;
-          border-radius: 5px;
+          color: #2196f3;
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 12px;
+          overflow: hidden;
+          transition: 0.2s;
+          color: #255784;
+            background: #2196f3;
+            box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+            transition-delay: 0.2s;
+          :hover {
+            color: #255784;
+            background: #1a6099;
+            box-shadow: 0 0 10px #1a6099, 0 0 40px #1a6099, 0 0 80px #1a6099;
+            transition-delay: 0.2s;
+
+            span{
+              :nth-child(1){
+                left: 100%;
+                transition: 1s;
+              }
+
+              :nth-child(2) {
+                top: 100%;
+                transition: 1s;
+                transition-delay: 0.25s;
+              }
+
+              :nth-child(3) {
+                right: 100%;
+                transition: 1s;
+                transition-delay: 0.5s;
+              }
+
+              :nth-child(4) {
+                bottom: 100%;
+                transition: 1s;
+                transition-delay: 0.75s;
+              }
+            }
+          }
+
+          span {
+            position: absolute;
+            display: block;
+            :nth-child(1) {
+              top: 0;
+              left: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(90deg, transparent, #2196f3);
+            }
+
+            :nth-child(2) {
+              top: -100%;
+              right: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(180deg, transparent, #2196f3);
+            }
+
+            :nth-child(3) {
+              bottom: 0;
+              right: -100%;
+              width: 100%;
+              height: 2px;
+              background: linear-gradient(270deg, transparent, #2196f3);
+            }
+
+            :nth-child(4) {
+              bottom: -100%;
+              left: 0;
+              width: 2px;
+              height: 100%;
+              background: linear-gradient(360deg, transparent, #2196f3);
+            }
+          }
         }
         .login{
           text-align: center;
@@ -151,6 +237,19 @@ const estiloMenu = styled.div`
   }
 
   @media (max-width: 1000px){
+    .animate__animated.animate__fadeIn{
+      opacity: 0.8 !important;
+    }
+    .cobrir{
+      background-color: black;
+      opacity: 0.8;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+    }
     .menu{
       grid-template-areas: ". logo . direita.";
       grid-template-columns:  2% 12% 72% 12% 2%;
@@ -159,6 +258,121 @@ const estiloMenu = styled.div`
       }
       ul{
         display: none;
+        
+      }
+
+      ul.ulResponsivo{
+        display: block;
+        width: 300px;
+        position: fixed;
+        z-index: 9998;
+        height: 100vh;
+        background-color: black;
+        opacity: 1;
+        top: 0;
+        right: 0;
+        padding-top: 50px;
+
+        .direita2{
+          display: block;
+          position: relative;
+          height: 100%;
+          .links{
+            margin-top: 40px;
+            .cadastro{
+              border: none;
+              position: relative;
+              display: inline-block;
+              padding: 5px 10px;
+              color: #2196f3;
+              text-transform: uppercase;
+              text-decoration: none;
+              font-size: 12px;
+              overflow: hidden;
+              transition: 0.2s;
+              color: #255784;
+                background: #2196f3;
+                box-shadow: 0 0 10px #2196f3, 0 0 40px #2196f3, 0 0 80px #2196f3;
+                transition-delay: 0.2s;
+              :hover {
+                color: #255784;
+                background: #1a6099;
+                box-shadow: 0 0 10px #1a6099, 0 0 40px #1a6099, 0 0 80px #1a6099;
+                transition-delay: 0.2s;
+
+                span{
+                  :nth-child(1){
+                    left: 100%;
+                    transition: 1s;
+                  }
+
+                  :nth-child(2) {
+                    top: 100%;
+                    transition: 1s;
+                    transition-delay: 0.25s;
+                  }
+
+                  :nth-child(3) {
+                    right: 100%;
+                    transition: 1s;
+                    transition-delay: 0.5s;
+                  }
+
+                  :nth-child(4) {
+                    bottom: 100%;
+                    transition: 1s;
+                    transition-delay: 0.75s;
+                  }
+                }
+              }
+
+              span {
+                position: absolute;
+                display: block;
+                :nth-child(1) {
+                  top: 0;
+                  left: -100%;
+                  width: 100%;
+                  height: 2px;
+                  background: linear-gradient(90deg, transparent, #2196f3);
+                }
+
+                :nth-child(2) {
+                  top: -100%;
+                  right: 0;
+                  width: 2px;
+                  height: 100%;
+                  background: linear-gradient(180deg, transparent, #2196f3);
+                }
+
+                :nth-child(3) {
+                  bottom: 0;
+                  right: -100%;
+                  width: 100%;
+                  height: 2px;
+                  background: linear-gradient(270deg, transparent, #2196f3);
+                }
+
+                :nth-child(4) {
+                  bottom: -100%;
+                  left: 0;
+                  width: 2px;
+                  height: 100%;
+                  background: linear-gradient(360deg, transparent, #2196f3);
+                }
+              }
+            }
+            .login{
+              text-align: center;
+              font-size: 12px;
+            }
+            a{
+              text-decoration: none;
+              color: white;
+              margin: 0 10px;
+            }
+          }
+        }
       }
 
       .direita{
@@ -168,6 +382,7 @@ const estiloMenu = styled.div`
         }
         .hamburger{
         display: block;
+        z-index: 9999;
       }
       }
     }  

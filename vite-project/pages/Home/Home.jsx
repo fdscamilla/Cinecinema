@@ -3,7 +3,7 @@ import axios from "axios";
 import Loading from '../../src/components/Loading'
 import Slider from "../../src/components/Slider";
 import Sessoes from "../../src/components/Sessoes";
-import Cardsblog from "../../src/components/cardsBlog";
+import Cardsblog from "../../src/components/CardsBlog";
 import Estilomenu from './Style'
 
 function Home(){
@@ -35,9 +35,15 @@ function Home(){
             </Slider>
           </div>
           <div className='sessoes'>
+              <div className="title">
+                <h2>Nossas <span>Sessões</span></h2>
+              </div>
             <Sessoes />
           </div>
           <div className='blog'>
+            <div className="title">
+              <h2>Notícias</h2>
+            </div>
             <Cardsblog />
           </div>
         </div>
